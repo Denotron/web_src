@@ -1,3 +1,54 @@
-div::after{
-    content:"+++";
+.wrapper{
+  margin: 5em;
+  width: 10em;
+    position:relative;
+  &::before{
+    position:absolute;
+    right:0;
+    content:'X';  
+    background: pink;
+    color:white;
+    width: 2.9em;
+    height: 2.9em;
+    text-align:center;
+    align-content:center;
+    border-radius:50%;
+    corner-shape: superellipse(1.5);
+    transform: translate(50%, -50%) scale(0);
+    transition: transform .5s;
+    cursor:pointer;    
+    &:active{
+      background: red;
+    }
+  }
+  &:hover{
+    &::before{
+      transform:translate(30%, -30%) scale(1) ;
+      
+    }
+    .card{
+      border-top-right-radius: 2.3em;
+      corner-top-right-shape: superellipse(-1.9);
+      
+    }
+  }
+}
+.card{
+  width: 10em;
+  height: 15em;
+  background: whitesmoke;
+  border-radius: 1.8em;  
+  border-top-right-radius: 2.3em;
+  corner-shape: superellipse(1.8);
+  corner-top-right-shape: superellipse(1.9);
+  transition: corner-top-right-shape .5s;  
+  box-shadow: 0px 5px 10px grey;
+}
+
+.wrapper{
+  &::before{
+    &:hover{
+      background:red;
+    }
+  }
 }
